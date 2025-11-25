@@ -1,5 +1,5 @@
 import React from "react";
-import "./services.css";
+import "./Services.css";
 import { Code, Smartphone, Globe, Settings } from "lucide-react";
 
 const Services = () => {
