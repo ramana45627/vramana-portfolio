@@ -1,0 +1,35 @@
+/* src/index.css - minimal reset + font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  background: pink;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ensure the app main respects the sidebar width */
+.app-root {
+  display: flex;
+}
+
+/* the Sidebar is fixed — keep main content scrollable */
+.app-main {
+  margin-left: 260px; /* match your sidebar width */
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* basic anchor smooth scroll */
+html {
+  scroll-behavior: smooth;
+}

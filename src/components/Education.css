@@ -1,0 +1,73 @@
+.edu-section {
+  padding: 100px 40px;
+  background: white;
+  color: black;
+}
+
+.edu-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.edu-title span {
+  color: #ffcc00;
+}
+
+/* Timeline container */
+.edu-timeline {
+  border-left: 3px solid black;
+  margin-left: 20px;
+  padding-left: 30px;
+}
+
+/* Card */
+.edu-card {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 25px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.6s forwards ease-out;
+}
+
+/* Dot */
+.edu-dot {
+  width: 14px;
+  height: 14px;
+  background: #ffcc00;
+  border-radius: 50%;
+  position: absolute;
+  left: -38px;
+  top: 5px;
+  box-shadow: 0 0 10px black;
+}
+
+.edu-card h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.edu-card h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color:black;
+}
+
+.edu-card h4 span {
+  color: black;
+}
+
+.edu-card p {
+  color:black;
+  line-height: 1.5;
+}
+
+/* Animation */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

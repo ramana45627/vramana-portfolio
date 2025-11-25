@@ -1,0 +1,18 @@
+.home-wrapper {
+  display: flex;
+  width: 100%;
+  background: white;
+}
+
+/* Sidebar left */
+.home-wrapper > :first-child {
+  width: 260px;
+  position: fixed;
+  height: 100vh;
+}
+
+/* Main content right side */
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
