@@ -1,24 +1,19 @@
+/* ---------- Projects (your normal styles) ---------- */
 .projects-section {
   padding: 100px 40px;
   background: white;
   color: black;
 }
 
-.projects-title {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 40px;
-}
+.projects-title { font-size: 40px; font-weight: 700; margin-bottom: 40px; }
+.projects-title span { color: #ffcc00; }
 
-.projects-title span {
-  color: #ffcc00;
-}
-
-/* Grid layout */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Project Card */
@@ -32,6 +27,9 @@
   transform: translateY(30px);
   animation: slideUp 0.7s forwards ease-out;
   position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+  pointer-events: auto; /* ensure card accepts pointer events */
 }
 
 .project-card:hover {
@@ -40,24 +38,9 @@
   transform: translateY(-8px);
 }
 
-.project-card h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #ffcc00;
-}
-
-.project-card p {
-  color: #cccccc;
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-.tech {
-  font-size: 14px;
-  color: white;
-  opacity: 0.7;
-  margin-bottom: 15px;
-}
+.project-card h3 { font-size: 22px; margin-bottom: 10px; color: #ffcc00; }
+.project-card p { color: #cccccc; margin-bottom: 10px; line-height: 1.5; }
+.tech { font-size: 14px; color: white; opacity: 0.7; margin-bottom: 15px; }
 
 /* Button */
 .view-btn {
@@ -70,12 +53,13 @@
   text-decoration: none;
   font-size: 14px;
   transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;             /* bring button above possible overlays */
+  pointer-events: auto !important;
 }
 
-.view-btn:hover {
-  background: #ffcc00;
-  color: black;
-}
+.view-btn:hover { background: #ffcc00; color: black; }
 
 /* Animation */
 @keyframes slideUp {
@@ -84,3 +68,16 @@
     transform: translateY(0);
   }
 }
+
+/* ---------- DEBUG HELPERS (temporary) ---------- */
+/*
+Enable the rule below to visualize stacking and see which element covers the button.
+Uncomment to use, then refresh page. Remove when done.
+*/
+.debug-outline * {
+  outline: 1px dashed rgba(255,0,0,0.3) !important;
+}
+
+/* If your site has a top fixed navbar or overlay class names, explicitly disable their pointer events:
+.navbar, .overlay, .modal-backdrop { pointer-events: none !important; }
+*/
